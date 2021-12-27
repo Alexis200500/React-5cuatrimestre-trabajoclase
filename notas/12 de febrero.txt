@@ -1,0 +1,48 @@
+## 12/02/2020
+
+## en .env
+DB_CONNECTION=sqlite
+#DB_PORT=3306
+#DB_DATABASE=dsm51
+#DB_USERNAME=root
+#DB_PASSWORD=
+
+
+
+php artisan migrate:fresh --seed
+
+cuando hagamos las migraciones vamos a config y auth
+
+ en api le ponemos true
+ 
+ 
+## creamos un resource:
+
+php artisan make:resource Usuario
+ 
+ ## en routes/api:
+ Route::middleware('auth:api')->get('/usuarios', function (Request $request) {
+    return UsuarioResource::collection(User::paginate());
+});
+
+
+
+
+# despues al navegador
+
+http:://127.0.0.1:8000/api/usuarios?api_token=Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  Descargar curl windows 

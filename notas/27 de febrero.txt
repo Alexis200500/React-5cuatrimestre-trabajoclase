@@ -1,0 +1,15 @@
+# 27/02/2020
+
+## laboratorios
+
+#### consulta
+c:/curl/bin/curl.exe -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/laboratorios
+
+#### insertar  
+
+  c:/curl/bin/curl.exe -i -X POST --data '{\"laboratorio\":\"Laboratorio2\",\"abreviatura\":\"LAB2\",\"estatus\":\"Activo\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/laboratorios
+
+
+#### eliminar
+
+c:/curl/bin/curl.exe -i -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/laboratorios/2

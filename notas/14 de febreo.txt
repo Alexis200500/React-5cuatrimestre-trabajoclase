@@ -1,0 +1,31 @@
+# 14/02/20
+
+php artisan make:controller UsuariosController
+
+
+same:significa que tiene que coincidir
+
+merge:combinar 
+
+
+error 422 -> es una entidad no procesable
+
+error 404 -> No se encuentra la pagina o no existe
+
+error 500 -> un error de programación o el codigo esta mal
+
+
+middleware: codigo que se ejecuta antes de los controladores
+
+Route::resource: 
+
+
+
+
+curl -i -H "Accept: application/json"
+-H "Content-Type: application/json"
+-H "Authorization: Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w"
+http://localhost:8000/api/usuarios
+
+
+![9914a61b.png](:storage\9194e95e-afec-43a1-b0c4-0795340788bc\9914a61b.png)

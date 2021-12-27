@@ -1,0 +1,46 @@
+# asesorias 2
+
+* el archivo de example.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Menu from './Menu/Menu';
+import Direccion from './Formularios/Direccion';
+import Validacion from './Formularios/Validacion';
+
+function Example() {
+    return (
+        <> //inicio de un nodo
+            <Menu /> 
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-md-8">
+                        <div className="card">
+                            <div className="card-header">Hola</div>
+                            <div className="card-body">
+                                <Direccion />
+                                <Validacion />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </> //fin de un nodo
+    );
+}
+
+export default Example;
+
+if (document.getElementById('example')) {
+    ReactDOM.render(<Example />, document.getElementById('example'));
+}
+
+
+* hacemos un commit donde agregamos el menu
+
+## instalacion de Formik y yup
+ * npm install formik --save
+ * npm install yup --save
+ * git status (ver los commits que hemos hecho)
+* ingreamos los formularios al example.js
+* hacemos un commit donde los guardamos 
+* corremos para verificar que este bien con npm run watch

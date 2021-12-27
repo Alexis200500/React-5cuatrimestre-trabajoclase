@@ -1,0 +1,80 @@
+# 19/02/20
+### api_token:
+llave o mecanismmo que va a identificar 
+
+
+### paso 1: verificar que el directorio de config en el archivo auth en api tenga true  
+
+
+
+  
+
+
+
+
+# DIRECCIONES ( PASOS)
+
+model 
+controlador
+
+php aerisan make:resource direccion
+
+crear un archivo json direccion.json
+
+{
+  "direccion":"Tecnologias de la Informacion y Comunicación"
+  ,"abeviatura":"TIC"
+  ,""
+}
+
+
+
+
+
+
+
+php artisan make:model Asignaturas
+
+php artisan make:resource Asignatura
+
+php artisan make:controller AsignaturasController
+
+crear archivo json asignatura.json
+ 
+php artisan make:migration create_asignaturas_table
+
+
+php artisan migrate
+
+
+## direcciones
+#### insertar
+c:/curl/bin/curl.exe -i -X POST --data '{\"direccion\":\"Interconexion de Redes\", \"abreviatura\":\"IRD\", \"estatus\":\"Activo\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/direcciones
+
+#### consultar
+c:/curl/bin/curl.exe -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/direcciones
+
+#### editar
+
+c:/curl/bin/curl.exe -i -X PUT --data '{\"direccion\":\"Enfermeria\",\"abreviatura\":\"ENF\",\"estatus\":\"activo\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/direcciones/2
+
+#### eliminar
+c:/curl/bin/curl.exe -i -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/direcciones/2
+
+
+
+# carreras
+
+#### consultas
+c:/curl/bin/curl.exe -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/carreras
+
+
+#### insertar
+
+c:/curl/bin/curl.exe -i -X POST --data '{\"carrera\":\"Mecatronica\", \"abreviatura\":\"MEC\",
+\"estatus\":\"Activo\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/carreras
+
+
+#### eliminar
+
+c:/curl/bin/curl.exe -i -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/carreras/2

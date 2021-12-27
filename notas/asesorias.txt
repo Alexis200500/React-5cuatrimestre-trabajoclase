@@ -1,0 +1,231 @@
+ # asesorías
+ 
+  ## Git
+  * git init (Inicializamos el git)
+  * git commit -m "Initial Commit" (Nombre del commit)
+  * git log (Verificamos que lo hayamos creado)
+  * git remote add origin https: //Alexis200500@bitbucket.org/Alexis200500/dsm51.git (direccion del commit que voy a guardar en la nube)
+
+ * git push -u origin master (comando para subirlo a la nube)
+
+## React
+ * composer require laravel/ui --dev (instalación de dependecias)
+
+mix.react('resources/js/app.js', 'public/js')
+  .sass('resources/sass/app.scss', 'public/css');
+  mix.browserSync('localhost:8000'); -> lo agregamos en webpack.mix.js
+  
+  * php artisan ui react --auth (Generar la vista 'welcome')
+  * npm install (instalacion de dependecias)
+  * npm run dev (correrlo para verificar que haya instalado bien)
+  * borramos todo lo de welcome  y escribimos esto
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React</title>
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+</head>
+<body>
+<div id="example"></div>
+<script src="{{ asset('js/app.js') }}"></script>
+</body>
+</html>
+
+  * hacemos otro commit
+  * npm run watch ( probar que corra bien)
+  * npm install react-bootstrap bootstrap (instalación de paquetes bootstrap)
+  * Agregamos una carpeta de Formularios y dentro de esta creamos los archivos de validacion y direccion ambos en .js
+
+
+   ##### validacion.js 
+   
+   import React from 'react';
+import {Formik} from 'formik';
+import * as yup from 'yup';
+import {Form, InputGroup, Button} from 'react-bootstrap';
+
+export default function Validacion(props) {
+    const schema = yup.object({
+        firstName: yup.string().required(),
+        lastName: yup.string().required(),
+        username: yup.string().required(),
+        city: yup.string().required(),
+        state: yup.string().required(),
+        zip: yup.string().required(),
+        terms: yup.bool().required(),
+    });
+
+    return (
+        <Formik
+      validationSchema={schema}
+      onSubmit={console.log}
+      initialValues={{
+        firstName: 'Mark',
+        lastName: 'Otto',
+      }}
+    >
+      {({
+        handleSubmit,
+        handleChange,
+        handleBlur,
+        values,
+        touched,
+        isValid,
+        errors,
+      }) => (
+        <Form noValidate onSubmit={handleSubmit}>
+          <Form.Row>
+            <Form.Group md="4" controlId="validationFormik01">
+              <Form.Label>First name</Form.Label>
+              <Form.Control
+                type="text"
+                name="firstName"
+                value={values.firstName}
+                onChange={handleChange}
+                isValid={touched.firstName && !errors.firstName}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group md="4" controlId="validationFormik02">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control
+                type="text"
+                name="lastName"
+                value={values.lastName}
+                onChange={handleChange}
+                isValid={touched.lastName && !errors.lastName}
+              />
+
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group md="4" controlId="validationFormikUsername">
+              <Form.Label>Username</Form.Label>
+              <InputGroup>
+                <InputGroup.Prepend>
+                  <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  aria-describedby="inputGroupPrepend"
+                  name="username"
+                  value={values.username}
+                  onChange={handleChange}
+                  isInvalid={!!errors.username}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.username}
+                </Form.Control.Feedback>
+              </InputGroup>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group md="6" controlId="validationFormik03">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="City"
+                name="city"
+                value={values.city}
+                onChange={handleChange}
+                isInvalid={!!errors.city}
+              />
+
+              <Form.Control.Feedback type="invalid">
+                {errors.city}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group md="3" controlId="validationFormik04">
+              <Form.Label>State</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="State"
+                name="state"
+                value={values.state}
+                onChange={handleChange}
+                isInvalid={!!errors.state}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.state}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group md="3" controlId="validationFormik05">
+              <Form.Label>Zip</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Zip"
+                name="zip"
+                value={values.zip}
+                onChange={handleChange}
+                isInvalid={!!errors.zip}
+              />
+
+              <Form.Control.Feedback type="invalid">
+                {errors.zip}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
+          <Form.Group>
+            <Form.Check
+              required
+              name="terms"
+              label="Agree to terms and conditions"
+              onChange={handleChange}
+              isInvalid={!!errors.terms}
+              feedback={errors.terms}
+              id="validationFormik0"
+            />
+          </Form.Group>
+          <Button type="submit">Submit form</Button>
+        </Form>
+      )}
+    </Formik>
+    );
+}
+##### referencia a las librerias
+import React from 'react';
+import {Formik} from 'formik';
+import * as yup from 'yup';
+import {Form, InputGroup, Button} from 'react-bootstrap'; 
+
+##### validaciones
+
+export default function Validacion(props) {
+    const schema = yup.object({
+        firstName: yup.string().required(),
+        lastName: yup.string().required(),
+        username: yup.string().required(),
+        city: yup.string().required(),
+        state: yup.string().required(),
+        zip: yup.string().required(),
+        terms: yup.bool().required(),
+    });
+
+##### direccion.js
+
+import React from 'react';
+import {Form, Button} from 'react-bootstrap';
+
+export default function Direccion(props) {
+    return (
+        <Form>
+            <Form.Group controlId="direccion">
+                <Form.Label>Dirección</Form.Label>
+                <Form.Control type="text" placeholder="Dirección" />
+                <Form.Text className="text-muted">
+                    Escribe la dirección completa
+                </Form.Text>
+            </Form.Group>
+            <Form.Group controlId="abreviatura">
+                <Form.Label>Abreviatura</Form.Label>
+                <Form.Control type="text" placeholder="Abreviatura" />
+                <Form.Text className="text-muted">
+                    Escribe la abreviatura de la dirección
+                </Form.Text>
+            </Form.Group>
+            <Button variant="primary" type="submit">enviar</Button>
+        </Form>
+    );
+}

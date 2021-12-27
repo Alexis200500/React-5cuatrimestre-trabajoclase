@@ -1,0 +1,31 @@
+# 07/02/2020
+
+npm install react-router-dom
+
+php artisan make:controller ReactController
+
+    public function show(){
+        return view('welcome');
+    }
+    
+en las rutas 
+
+Route::get('/{path?}',[
+    'uses'=> 'ReactController@show',
+    'as' =>'react'
+    'where'=>['path' => '.*']
+]);
+
+
+
+
+
+
+
+php artisan make:seeder DireccionTableSeeder
+
+php artisan make:resource Usuario
+
+php artisan make:migration update_users_table_01
+
+php artisan make:model 

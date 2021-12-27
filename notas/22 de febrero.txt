@@ -1,0 +1,10 @@
+# 22/02/2020
+
+composer require fruitcake/laravel-cors
+composer require laracasts/flash
+npm install react-router-dom
+-- -
+
+UN ROUTER CONTIENE UN SWITCH Y ESTE SWITCH CONTIENTE  VARIOS ROUTES
+
+-- -  

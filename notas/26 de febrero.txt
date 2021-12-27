@@ -1,0 +1,22 @@
+# 26/02/2020
+
+postman 
+
+new  dsm51
+ bearer token 
+  add folder 
+   usuarios
+    add request
+     listar 
+      headers 
+       presents
+        Accept application/json
+        Content-Type application/json
+        
+        
+cuatrimestres
+laboratorios
+dias feriados
+grupos de laboratorio
+udidades de medidas
+materiales

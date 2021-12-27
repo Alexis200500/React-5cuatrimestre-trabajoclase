@@ -1,0 +1,54 @@
+## 12/02/20
+
+https://laravel.com/docs/6.x/api-authentication#generating-tokens
+
+
+https://laravel.com/docs/6.x/eloquent-resources
+
+[Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#defining-controllers)
+
+
+creamos una migracion 
+
+php artisan make:migration Update_Users_Table_01
+
+ Schema::table('users', function ($table) {
+            $table->string('api_token', 80)->after('password')
+                                ->unique()
+                                ->nullable()
+                                ->default(null);
+        });
+        
+        
+        
+creamos un seeder :
+
+php artisan make:seeder UsersTableSeeder
+
+<?php
+
+use Illuminate\Database\Seeder;
+use App\User;
+use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
+class UsersTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        // $token = $tr::random(60);
+        $token = 'Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w';
+        User::insert([
+            'name' => 'Alexis'
+            ,'email' => 'alexis@gmail.com'
+            ,'password' => bcrypt('123456')
+            ,'api_token' => hash('sha256', $token)
+            ,'created_at' => Carbon::now('America/Mexico_City')->format('Y-m-d H:i:s')
+            ,'updated_at' => Carbon::now('America/Mexico_City')->format('Y-m-d H:i:s')            
+        ]);
+    }
+}

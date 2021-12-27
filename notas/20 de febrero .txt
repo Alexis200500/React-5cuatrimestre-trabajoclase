@@ -1,0 +1,16 @@
+# 20/02/20
+
+## Asignaturas
+
+#### consultas
+c:/curl/bin/curl.exe -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/asignaturas
+ 
+
+#### insertar  
+
+ c:/curl/bin/curl.exe -i -X POST --data '{\"asignatura\":\"Calculo\",\"abreviatura\":\"CAL\",\"estatus\":\"Activo\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/asignaturas
+
+
+#### eliminar
+
+c:/curl/bin/curl.exe -i -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/asignaturas/2

@@ -1,0 +1,38 @@
+# 15/02/20
+
+### [Controllers - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/6.x/controllers#resource-controllers)
+
+
+
+## PATCH , PUT : /usuarios/{id}
+
+put: actualización
+
+## DELETE: /usuarios/{id}
+
+
+
+# INSERTAR
+
+c:/curl/bin/curl.exe -i -X POST --data '{\"name\":\"Carlos\",\"email\":\"erik@gmail.com\", \"password\":\"123456789\",\"password_confirmation\":\"123456789\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/usuarios
+
+ 
+# MOSTRAR 
+## todo
+c:/curl/bin/curl.exe -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/usuarios
+
+## una consulta por numero 
+c:/curl/bin/curl.exe -i -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/usuarios/1
+
+# ELIMINAR
+
+c:/curl/bin/curl.exe -i -X DELETE -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/usuarios/2
+
+
+# EDITAR
+c:/curl/bin/curl.exe -i -X PUT --data '{\"name\":"\Juanito\",\"email\":"\juanito@gmail.com\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/usuarios/2
+
+
+### editar (correcto)
+
+c:/curl/bin/curl.exe -i -X PUT --data '{\"name\":\"Antonio\",\"email\":\"tonio@gmail.com\"}' -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization:Bearer Q7TI4u1MmzF66Bdf0tWfst69yWejeFmnLk31F5f369c3vqRqibSVPKXzTh9w" http://localhost:8000/api/usuarios/2
